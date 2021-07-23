@@ -1,0 +1,1 @@
+void rand_map();

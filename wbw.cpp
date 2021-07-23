@@ -1,0 +1,102 @@
+#include"2048.h"
+void up(void)
+{
+	int i,j;
+for(j=3;j>0;j--)
+{
+    for(i=0;i<4;i++)
+    {
+        if(map[j-1][i]==0)
+        {
+            map[j-1][i]=map[j][i];
+            map[j][i]=0;
+        }
+        else
+        {
+            if(map[j-1][i]==map[j][i])
+            {
+                map[j-1][i]=2*map[j-1][i];
+                map[j][i]=0;
+                s=s+map[j-1][i]/2;
+            }
+            else
+                map[j-1][i]=map[j-1][i];
+        }
+    }
+}
+}
+void down(void){
+	int i,j;
+for(j=0;j<3;j++)
+    {
+     for(i=0;i<4;i++)
+     {
+         if(map[j+1][i]==0)
+         {
+             map[j+1][i]=map[j][i];
+             map[j][i]=0;
+         }
+         else
+         {
+             if(map[j+1][i]==map[j][i])
+             {
+                 map[j+1][i]=2*map[j+1][i];
+                 map[j][i]=0;
+                s=s+map[j+1][i]/2;
+             }
+             else
+                 map[j+1][i]=map[j+1][i];
+         }
+     }
+ }
+}
+void left(void){
+	int i,j;
+for(i=3;i>0;i--)
+    {
+    for(j=0;j<4;j++)
+    {
+        if(map[j][i-1]==0)
+        {
+            map[j][i-1]=map[j][i];
+            map[j][i]=0;
+        }
+        else
+        {
+            if(map[j][i-1]==map[j][i])
+            {
+                map[j][i-1]=2*map[j][i-1];
+                map[j][i]=0;
+                s=s+map[j][i-1]/2;
+            }
+            else
+                map[j][i-1]=map[j][i-1];
+        }
+    }
+}
+}
+void right(void){
+	int i,j;
+for(i=0;i<3;i++)
+{
+    for(j=0;j<4;j++)
+    {
+        if(map[j][i+1]==0)
+        {
+            map[j][i+1]=map[j][i];
+            map[j][i]=0;
+        }
+        else
+        {
+            if(map[j][i+1]==map[j][i])
+            {
+                map[j][i+1]=2*map[j][i+1];
+                map[j][i]=0;
+                s=s+map[j][i+1]/2;
+            }
+            else
+                map[j][i+1]=map[j][i+1];
+        }
+    }
+}
+}
